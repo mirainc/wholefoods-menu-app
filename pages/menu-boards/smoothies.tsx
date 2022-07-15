@@ -18,6 +18,7 @@ export interface SmoothiesProps {
   errorCode?: number;
   errorTitle?: string;
   data?: MenuData;
+  footnote?: string;
 }
 
 const menuApi = "https://menu-api.raydiant.com/v1/groups";
@@ -25,6 +26,8 @@ const apiKey = process.env.RAYDIANT_MENU_API_KEY ?? "";
 
 export const getServerSideProps: GetServerSideProps<SmoothiesProps> = async (context) => {
   const menu = context.query.menu;
+  const footnote = context.query.footnote as string;
+
   // Set the response status code to BadRequest if missing the menu query param.
   if (!menu) {
     context.res.statusCode = 400;
@@ -57,11 +60,12 @@ export const getServerSideProps: GetServerSideProps<SmoothiesProps> = async (con
   return {
     props: {
       data: juicesData,
+      footnote,
     },
   };
 };
 
-const Smoothies: NextPage<SmoothiesProps> = ({ errorCode, errorTitle, data }) => {
+const Smoothies: NextPage<SmoothiesProps> = ({ errorCode, errorTitle, data, footnote }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -121,8 +125,12 @@ const Smoothies: NextPage<SmoothiesProps> = ({ errorCode, errorTitle, data }) =>
           </div>
           <div className="absolute bottom-0 left-0 w-2/3">
             <Footnote>
-              Additional nutrition information available upon request. <br /> 2,000 calories a day
-              is used for general nutrition advice, but calorie needs vary.
+              {footnote || (
+                <>
+                  Additional nutrition information available upon request. <br /> 2,000 calories a
+                  day is used for general nutrition advice, but calorie needs vary.
+                </>
+              )}
             </Footnote>
           </div>
         </section>
