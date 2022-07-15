@@ -7,13 +7,13 @@ _Example menuId: 5ffd5ad4-d853-48cd-a19b-421490314676_
 
 Localhost:
 
-- Juices Menu Board: http://localhost:3000/menu-boards/juices?menu={menuId}
-- Smoothies Menu Board: http://localhost:3000/menu-boards/smoothies?menu={menuId}
+- Juices Menu Board: http://localhost:3000/menu-boards/juices?menu={menuId}&footnote={footnote}
+- Smoothies Menu Board: http://localhost:3000/menu-boards/smoothies?menu={menuId}&footnote={footnote}
 
 Production:
 
-- Juices Menu Board: https://wholefoods.vercel.app/menu-boards/juices?menu={menuId}
-- Smoothies Menu Board: https://wholefoods.vercel.app/menu-boards/smoothies?menu={menuId}
+- Juices Menu Board: https://wholefoods.vercel.app/menu-boards/juices?menu={menuId}&footnote={footnote}
+- Smoothies Menu Board: https://wholefoods.vercel.app/menu-boards/smoothies?menu={menuId}&footnote={footnote}
 
 ## Prerequisities
 
@@ -37,8 +37,12 @@ See [here](https://raydiant.notion.site/How-do-I-develop-an-app-487d7064eeec402f
 
 There is one builder input for this project. Builder inputs can be configured after creating a new app in [Raydiant's Developer portal](https://developers.raydiant.com/)
 
+- Location (select input) - Corresponds to a menu ID
+  ![Menu Board](location-builder-input.png)
 - Menu Board (select input) - Corresponds to a NextJS route
   ![Menu Board](menu-board-builder-input.png)
+- Footnote (text input) - Corresponds to a query param
+  ![Footnote](footnote-builder-input.png)
 
 ## Multi-location/menu support
 
