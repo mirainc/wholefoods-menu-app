@@ -18,6 +18,7 @@ export interface JuicesProps {
   errorCode?: number;
   errorTitle?: string;
   data?: MenuData;
+  footnote?: string;
 }
 
 const menuApi = "https://menu-api.raydiant.com/v1/groups";
