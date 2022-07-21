@@ -124,14 +124,7 @@ const Smoothies: NextPage<SmoothiesProps> = ({ errorCode, errorTitle, data, foot
             ))}
           </div>
           <div className="absolute bottom-0 left-0 w-2/3">
-            <Footnote>
-              {footnote || (
-                <>
-                  Additional nutrition information available upon request. <br /> 2,000 calories a
-                  day is used for general nutrition advice, but calorie needs vary.
-                </>
-              )}
-            </Footnote>
+            <Footnote>{footnote}</Footnote>
           </div>
         </section>
 
