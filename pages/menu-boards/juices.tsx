@@ -103,7 +103,7 @@ const Juices: NextPage<JuicesProps> = ({ errorCode, errorTitle, data, footnote }
             <Heading>
               {name} ${price}
             </Heading>
-            <div className="mb-[52px]">
+            <div className="mb-14">
               <Subheading>
                 EA
                 <br />
