@@ -104,7 +104,7 @@ const Smoothies: NextPage<SmoothiesProps> = ({ errorCode, errorTitle, data, foot
             <Heading>
               {name} ${price}
             </Heading>
-            <div className="mb-[52px]">
+            <div className="mb-14">
               <Subheading>
                 EA
                 <br />
